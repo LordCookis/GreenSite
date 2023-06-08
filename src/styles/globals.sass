@@ -3,6 +3,7 @@ body
   margin: 0px
   background-image: url("https://catherineasquithgallery.com/uploads/posts/2023-02/1676614265_catherineasquithgallery-com-p-zastavka-na-rabochii-stol-zelenii-fon-171.jpg")
   font-family: Lucida Console
+  text-decoration: none
 
 .NavBar
   padding-top: 10px
@@ -13,7 +14,7 @@ body
   border: solid 3px #2eca2e
   border-left: none
   border-right: none
-  .link
+  .Link
     color: #ffffff
     font-size: 30px
     transition: 300ms
@@ -21,26 +22,135 @@ body
     &:hover
       color: #6dec6d
 
-.MainDiv
+.Link
+  text-decoration: none
+  .MainDiv
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    .ObjectDiv
+      height: 350px
+      width: 230px
+      margin: 15px
+      display: flex
+      justify-content: center
+      background-color: #2cac2c81
+      color: #ffffff
+      font-size: 20px
+      transition: 300ms
+      border: solid 3px #2eca2e
+      border-radius: 15px
+      .ObjectImage
+        margin: 5px
+      .ObjectText
+        display: flex
+        justify-content: center
+      &:hover
+        color: #6dec6d
+
+.AddObjectForm
+  margin: 15px
   display: flex
-  flex-wrap: wrap
-  justify-content: center
-  .ObjectDiv
-    height: 350px
-    width: 230px
-    margin: 15px
+  flex-direction: column
+  justify-items: center
+  align-items: center
+  font-family: Lucida Console
+  .Span
+    color: #ffffff
+    font-size: 50px
+  .Input
+    width: 650px
+    padding: 10px
     display: flex
     justify-content: center
     background-color: #2cac2c81
     color: #ffffff
-    font-size: 20px
+    font-family: Lucida Console
+    font-size: 45px
     transition: 300ms
     border: solid 3px #2eca2e
-    border-radius: 15px
-    .ObjectImage
-      margin: 5px
-    .ObjectText
-      display: flex
-      justify-content: center
+    border-radius: 10px
+    outline: none
+    &::placeholder
+      color: #2cac2c81
+  .Textarea
+    height: 450px
+    width: 650px
+    padding: 10px
+    display: flex
+    justify-content: center
+    background-color: #2cac2c81
+    color: #ffffff
+    font-size: 49.5px
+    transition: 300ms
+    border: solid 3px #2eca2e
+    border-radius: 10px
+    outline: none
+    &::placeholder
+      color: #2cac2c81
+  .Image
+    width: 650px
+    padding: 10px
+    display: flex
+    justify-content: center
+    background-color: #2cac2c81
+    color: #ffffff
+    font-family: Lucida Console
+    font-size: 39px
+    transition: 300ms
+    border: solid 3px #2eca2e
+    border-radius: 10px
+  .Button
+    width: 675px
+    padding: 10px
+    display: flex
+    justify-content: center
+    background-color: #2cac2c81
+    color: #ffffff
+    font-family: Lucida Console
+    font-size: 45px
+    transition: 300ms
+    border: solid 3px #2eca2e
+    border-radius: 10px
     &:hover
       color: #6dec6d
+
+.MainPage
+  display: flex
+  justify-content: center
+  .ObjectPageDiv
+    height: 800px
+    width: 1400px
+    margin: 15px
+    padding: 10px
+    display: flex
+    justify-content: flex-start
+    background-color: #2cac2c81
+    border: solid 3px #2eca2e
+    border-radius: 10px
+    .Input
+      width: 300px
+      padding: 10px
+      display: flex
+      justify-content: center
+      background-color: #2cac2c00
+      color: #ffffff
+      font-family: Lucida Console
+      font-size: 45px
+      transition: 300ms
+      border-radius: 10px
+      outline: none
+    .Textarea
+      height: 700px
+      width: 750px
+      padding: 10px
+      display: flex
+      justify-content: center
+      background-color: #2cac2c00
+      color: #ffffff
+      font-size: 35px
+      text-align: justify
+      transition: 300ms
+      border: none
+      border-radius: 10px
+      outline: none

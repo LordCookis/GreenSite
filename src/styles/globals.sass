@@ -18,16 +18,26 @@ body
     color: #ffffff
     font-size: 30px
     transition: 300ms
+    text-decoration: none !important
+    &:hover
+      color: #6dec6d
+  .AddLink
+    padding: 0px 5px 0px 5px
+    color: #ffffff
+    border: solid 3px #2eca2e
+    border-radius: 15px
+    font-size: 30px
+    transition: 300ms
     text-decoration: none
     &:hover
       color: #6dec6d
 
-.Link
-  text-decoration: none
-  .MainDiv
-    display: flex
-    flex-wrap: wrap
-    justify-content: center
+.MainDiv
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  .Link
+    text-decoration: none !important
     .ObjectDiv
       height: 350px
       width: 230px
@@ -42,11 +52,18 @@ body
       border-radius: 15px
       .ObjectImage
         margin: 5px
+        margin-top: 10px
+        border: solid 3px #2eca2e
+        border-radius: 15px
+        object-fit: cover
       .ObjectText
         display: flex
         justify-content: center
       &:hover
         color: #6dec6d
+
+a
+  text-decoration: none !important
 
 .AddObjectForm
   margin: 15px
@@ -96,7 +113,7 @@ body
     background-color: #2cac2c81
     color: #ffffff
     font-family: Lucida Console
-    font-size: 39px
+    font-size: 39.5px
     transition: 300ms
     border: solid 3px #2eca2e
     border-radius: 10px
@@ -128,6 +145,47 @@ body
     background-color: #2cac2c81
     border: solid 3px #2eca2e
     border-radius: 10px
+    .ObjectImage
+      margin: 5px
+      border: solid 3px #2eca2e
+      border-radius: 15px
+      object-fit: cover
+    .ObjectDiv
+      display: flex
+      justify-content: center
+      flex-direction: column
+      flex-wrap: nowrap
+      justify-content: space-between
+      align-items: flex-end
+      .Textarea
+        height: 700px
+        width: 750px
+        padding-left: 25px
+        display: flex
+        justify-content: center
+        background-color: #2cac2c00
+        color: #ffffff
+        font-size: 35px
+        text-align: justify
+        transition: 300ms
+        border: none
+        border-radius: 10px
+        outline: none
+      .ExitButton
+        height: 50px
+        width: 50px
+        margin-bottom: 20px
+        display: flex
+        justify-content: center
+        align-items: center
+        color: #ffffff
+        font-size: 50px
+        transition: 300ms
+        border: solid 3px #2eca2e
+        border-radius: 15px
+        text-decoration: none
+        &:hover
+          color: #6dec6d
     .Input
       width: 300px
       padding: 10px
@@ -138,19 +196,41 @@ body
       font-family: Lucida Console
       font-size: 45px
       transition: 300ms
-      border-radius: 10px
-      outline: none
-    .Textarea
-      height: 700px
-      width: 750px
-      padding: 10px
-      display: flex
-      justify-content: center
-      background-color: #2cac2c00
-      color: #ffffff
-      font-size: 35px
-      text-align: justify
-      transition: 300ms
       border: none
-      border-radius: 10px
       outline: none
+
+.LogRegForm
+  margin: 15px
+  display: flex
+  flex-direction: column
+  justify-items: center
+  align-items: center
+  font-family: Lucida Console
+  .Input
+    padding: 10px
+    display: flex
+    justify-content: center
+    background-color: #2cac2c81
+    color: #ffffff
+    font-family: Lucida Console
+    font-size: 50px
+    transition: 300ms
+    border: solid 3px #2eca2e
+    border-radius: 10px
+    outline: none
+    &::placeholder
+      color: #2cac2c81
+  .Button
+    width: 629.5px
+    padding: 10px
+    display: flex
+    justify-content: center
+    background-color: #2cac2c81
+    color: #ffffff
+    font-family: Lucida Console
+    font-size: 45px
+    transition: 300ms
+    border: solid 3px #2eca2e
+    border-radius: 10px
+    &:hover
+      color: #6dec6d

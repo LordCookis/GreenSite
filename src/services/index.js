@@ -1,5 +1,7 @@
 import { baseServices } from "./base.services"
+import { logRegServices } from "./logreg.servces"
 
 export const services = {
-  base: baseServices
+  base: baseServices,
+  logreg: logRegServices
 }

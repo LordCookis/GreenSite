@@ -14,7 +14,7 @@ export const logRegServices = {
         }
         account.login = sessionStorage.getItem("login")
         if (account.login) {
-            return account
+            return true
         }
         const { data, error } = await supabase.from('Admins').select().eq("login", login)
         if (!data.length) {
@@ -33,7 +33,7 @@ export const logRegServices = {
         sessionStorage.removeItem("login")
         return false
     },
-    async checklogin(){
+    async checkLogin(){
         const response = sessionStorage.getItem("username");
         return JSON.parse(response)
     }

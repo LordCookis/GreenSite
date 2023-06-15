@@ -33,7 +33,7 @@ export default function LogReg() {
 		}
 	}
 
-	//const exit = async() =>
+	const exit = async() => services.logreg.exit()
 
   return(
 		<div className="MainDiv">

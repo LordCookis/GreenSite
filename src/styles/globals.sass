@@ -152,11 +152,18 @@ a
       object-fit: cover
     .ObjectDiv
       display: flex
-      justify-content: center
       flex-direction: column
-      flex-wrap: nowrap
-      justify-content: space-between
       align-items: flex-end
+      .ObjectInfo
+        display: flex
+        justify-content: center
+        flex-direction: column
+        flex-wrap: nowrap
+        justify-content: space-between
+        align-items: flex-end
+      .ObjectAdmin
+        padding-top: 30px
+        display: flex
       .Textarea
         height: 700px
         width: 750px
@@ -171,10 +178,25 @@ a
         border: none
         border-radius: 10px
         outline: none
+      .Button
+        width: 300px
+        padding: 10px
+        margin-left: 15px
+        display: flex
+        justify-content: center
+        background-color: #2cac2c81
+        color: #ffffff
+        font-family: Lucida Console
+        font-size: 30px
+        transition: 300ms
+        border: solid 3px #2eca2e
+        border-radius: 10px
+        &:hover
+          color: #6dec6d
       .ExitButton
         height: 50px
         width: 50px
-        margin-bottom: 20px
+        margin-left: 50px
         display: flex
         justify-content: center
         align-items: center

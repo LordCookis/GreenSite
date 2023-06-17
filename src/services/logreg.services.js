@@ -9,12 +9,8 @@ export const logRegServices = {
         await supabase.from('Admins').insert({ login, password })
     },
     async get(login, password){
-        let account = {
-            "login": ""
-        }
-        account.login = sessionStorage.getItem("login")
-        if (account.login) {
-            return true
+        if (!login) {
+            return false
         }
         const { data, error } = await supabase.from('Admins').select().eq("login", login)
         if (!data.length) {
@@ -26,15 +22,9 @@ export const logRegServices = {
         if (error) {
             throw new Error("Ошибка")
         }
-        sessionStorage.setItem("login", data[0])
         return true
     },
     async exit() {
-        sessionStorage.removeItem("login")
         return false
-    },
-    async checkLogin(){
-        const response = sessionStorage.getItem("username");
-        return JSON.parse(response)
     }
 }

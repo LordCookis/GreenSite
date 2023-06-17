@@ -16,8 +16,8 @@ export default function LogReg() {
 	const log = async(e) => {
 		e.preventDefault()
 		await session.refetch()
-		setLogin()
-		setPassword()
+		setLogin("")
+		setPassword("")
 	}
 	
 	const reg = async(e) => {
@@ -25,37 +25,40 @@ export default function LogReg() {
 		if (password == checkPassword) {
 			await services.logreg.add(login, password)
 			await session.refetch()
-			setLogin()
-			setPassword()
-			setCheckPassword()
+			setLogin("")
+			setPassword("")
+			setCheckPassword("")
 		} else {
 			return
 		}
 	}
 
-	const exit = async() => services.logreg.exit()
+	const exit = async() => {
+		await services.logreg.get()
+		await session.refetch()
+	}
 
   return(
 		<div className="MainDiv">
 			{!session.data
       ?
 			<form className="LogRegForm" onSubmit={log}>
-				<input className="Input" value={login} placeholder="Введите логин" onChange={(e)=>setLogin(e.target.value)}/><br/>
-				<input className="Input" value={password} type="password" placeholder="Введите пароль" onChange={(e)=>setPassword(e.target.value)}/><br/>
+				<input className="Input" autoComplete="off" value={login} placeholder="Введите логин" onChange={(e)=>setLogin(e.target.value)}/><br/>
+				<input className="Input" autoComplete="off" value={password} type="password" placeholder="Введите пароль" onChange={(e)=>setPassword(e.target.value)}/><br/>
 				<button className="Button">ВОЙТИ</button>
 			</form>
 			:
-			<>
-			<form className="LogRegForm" onSubmit={reg}>
-				<input className="Input" value={login} placeholder="Введите логин" onChange={(e)=>setLogin(e.target.value)}/><br/>
-				<input className="Input" value={password} type="password" placeholder="Введите пароль" onChange={(e)=>setPassword(e.target.value)}/><br/>
-				<input className="Input" value={checkPassword} type="password" placeholder="Повторите пароль" onChange={(e)=>setCheckPassword(e.target.value)}/><br/>
-				<button className="Button">ЗАРЕГИСТИРОВАТЬ</button>
-			</form>
-			<form className="LogRegForm" onSubmit={exit}>
-			<button className="Button">ВЫЙТИ</button>
-			</form>
-			</>
+			<div>
+				<form className="LogRegForm" onSubmit={reg}>
+					<input className="Input" autoComplete="off" value={login} placeholder="Введите логин" onChange={(e)=>setLogin(e.target.value)}/><br/>
+					<input className="Input" autoComplete="off" value={password} type="password" placeholder="Введите пароль" onChange={(e)=>setPassword(e.target.value)}/><br/>
+					<input className="Input" autoComplete="off" value={checkPassword} type="password" placeholder="Повторите пароль" onChange={(e)=>setCheckPassword(e.target.value)}/><br/>
+					<button className="Button">ЗАРЕГИСТИРОВАТЬ</button>
+				</form>
+				<form className="LogRegForm" onSubmit={exit}>
+					<button className="Button">ВЫЙТИ</button>
+				</form>
+			</div>
 			}
 		</div>
 	)

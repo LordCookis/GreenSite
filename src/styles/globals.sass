@@ -145,6 +145,35 @@ a
     background-color: #2cac2c81
     border: solid 3px #2eca2e
     border-radius: 10px
+    .ObjectName
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      .Input
+        width: 375px
+        padding: 10px
+        background-color: #2cac2c00
+        color: #ffffff
+        font-family: Lucida Console
+        font-size: 35px
+        transition: 300ms
+        border: none
+        outline: none
+      .InputCost
+        width: 175px
+        padding: 10px
+        background-color: #2cac2c00
+        color: #ffffff
+        font-family: Lucida Console
+        font-size: 35px
+        text-align: right
+        transition: 300ms
+        border: none
+        outline: none
+      .Span
+        color: #ffffff
+        font-family: Lucida Console
+        font-size: 45px
     .ObjectImage
       margin: 5px
       border: solid 3px #2eca2e
@@ -178,8 +207,21 @@ a
         border: none
         border-radius: 10px
         outline: none
+        resize: none
+      .Image
+        width: 200px
+        padding: 10px
+        display: flex
+        justify-content: center
+        background-color: #2cac2c81
+        color: #ffffff
+        font-family: Lucida Console
+        font-size: 20px
+        transition: 300ms
+        border: solid 3px #2eca2e
+        border-radius: 10px
       .Button
-        width: 300px
+        width: 200px
         padding: 10px
         margin-left: 15px
         display: flex
@@ -187,7 +229,7 @@ a
         background-color: #2cac2c81
         color: #ffffff
         font-family: Lucida Console
-        font-size: 30px
+        font-size: 20px
         transition: 300ms
         border: solid 3px #2eca2e
         border-radius: 10px
@@ -256,3 +298,15 @@ a
     border-radius: 10px
     &:hover
       color: #6dec6d
+
+::-webkit-scrollbar
+  width: 10px
+
+::-webkit-scrollbar-track
+  background: #2cac2c81
+
+::-webkit-scrollbar-thumb
+  background: #2eca2e
+
+::-webkit-scrollbar-thumb:hover
+  background: #6dec6d

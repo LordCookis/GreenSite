@@ -19,8 +19,7 @@ export default function ObjectPage() {
   const { id } = router.query
 
 	const session = useQuery({
-    queryKey: ["session"],
-    queryFn: () => {console.log("Москва Любино работаем")}
+    queryKey: ["session"]
   })
 
 	const thisObject = useQuery({
@@ -39,6 +38,7 @@ export default function ObjectPage() {
 	}
 
 	const editObject = async() => {
+		console.log("1",image)
 		sendUpdate.mutate()
 		setEditState(false)
 		console.log("id ", id)
@@ -60,8 +60,6 @@ export default function ObjectPage() {
 
 	return(
 		<div className="MainPage">
-			{!session.data
-			?
 			<div className="ObjectPageDiv">
 				<div>
 					<Image className='ObjectImage' src={object.image} height={700} width={600} alt=""/><br/><br/>
@@ -74,29 +72,10 @@ export default function ObjectPage() {
 				</div>
 				<div className="ObjectDiv">
 					<div className="ObjectInfo">
-						<textarea className="Textarea" value={object.description} disabled={!editState}/>
+					<textarea className="Textarea" value={object.description} onChange={(e)=>setObject({...object, description: e.target.value})} disabled={!editState}/>
 					</div>
-					<div className="ObjectAdmin">
-						<Link href="/" className="Link"><div className='ExitButton'>X</div></Link>
-					</div>
-				</div>
-			</div>
-			:
-			<div className="ObjectPageDiv">
-				<div>
-					<Image className='ObjectImage' src={object.image} height={700} width={600} alt=""/><br/><br/>
-					<div className="ObjectName">
-						<input className="Input" value={object.name} onChange={(e)=>setObject({...object, name: e.target.value})} disabled={!editState}/>
-						<div>
-							<input className="InputCost" value={object.price} onChange={(e)=>setObject({...object, price: e.target.value})} disabled={!editState}/><span className="Span">₸</span>
-						</div>
-					</div>
-				</div>
-				<div className="ObjectDiv">
-					<div className="ObjectInfo">
-						<textarea className="Textarea" value={object.description} onChange={(e)=>setObject({...object, description: e.target.value})} disabled={!editState}/>
-					</div>
-					{!editState
+					{session.data ?
+					!editState
 					?
 					<div className="ObjectAdmin">
 						<input className="Image" autoComplete="off" name={object.image} type="file" onChange={uploadImage}/>
@@ -111,10 +90,13 @@ export default function ObjectPage() {
 						<button className="Button" onClick={cancelFucn}>ОТМЕНА</button>
 						<Link href="/" className="Link"><div className='ExitButton'>X</div></Link>
 					</div>
+					:
+					<div className="ObjectAdmin">
+						<Link href="/" className="Link"><div className='ExitButton'>X</div></Link>
+					</div>
 					}
 				</div>
 			</div>
-			}
 		</div>
 	)
 }

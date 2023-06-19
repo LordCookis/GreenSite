@@ -7,7 +7,6 @@ export const baseServices = {
         const { data1, error1 } = await supabase
             .from("Objects")
             .insert({name: object.name, description: object.description, image: filename, price: object.price})
-
         const { data2, error2 } = await supabase.storage
             .from("Images")
             .upload(filename, image, {
@@ -39,12 +38,13 @@ export const baseServices = {
             upsert: false
         })
         console.log("update response: ", data)
+        console.log("2", object.image)
     },
     async getRows(){
         const { data } = await supabase.from("Objects").select()
         const filtered = data.map((item) => (
             {...item, image:"https://fygkskorgvtqqitnzwuy.supabase.co/storage/v1/object/public/Images/" + item.image}
-          ))
+        ))
         return filtered
     }
 }

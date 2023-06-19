@@ -10,6 +10,7 @@ export default function LogReg() {
 	const session = useQuery({
     queryKey: ["session"],
     queryFn: () => services.logreg.get(login, password),
+		onError: (data) => alert(data),
 		enabled: false
   })
 

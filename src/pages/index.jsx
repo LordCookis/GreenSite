@@ -7,8 +7,7 @@ export default function MainPage() {
 
 	const thisObject = useQuery({
     queryKey: ["thisObject"],
-    queryFn: () => services.base.getRows(),
-		onSuccess: (data) => console.log(data)
+    queryFn: () => services.base.getRows()
   })
 
 	return(
